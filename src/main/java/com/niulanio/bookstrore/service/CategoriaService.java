@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.niulanio.bookstrore.domain.Categoria;
 import com.niulanio.bookstrore.dtos.CategoriaDTO;
-import com.niulanio.bookstrore.exceptions.DataIntegrotyViolationException;
 import com.niulanio.bookstrore.exceptions.ObjectNotFoundException;
 import com.niulanio.bookstrore.repository.CategoriaRepository;
 
