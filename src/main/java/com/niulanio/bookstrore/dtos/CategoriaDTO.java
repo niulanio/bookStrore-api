@@ -4,6 +4,9 @@ import java.io.Serializable;
 
 import com.niulanio.bookstrore.domain.Categoria;
 
+import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotEmpty;
+
 public class CategoriaDTO implements Serializable{
 	
 	/**
@@ -11,7 +14,12 @@ public class CategoriaDTO implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	private Long id;
+	
+	@Column(length = 50)
+	@NotEmpty(message = "Campo NOME é obrigatorio")
 	private String nome;
+
+
 	private String descricao;
 	public CategoriaDTO() {
 		super();

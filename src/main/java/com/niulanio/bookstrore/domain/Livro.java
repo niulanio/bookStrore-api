@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,12 +31,17 @@ public class Livro implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false, length = 100, unique = true)
+	@Column(length = 100, unique = true)
+	@NotEmpty(message = "Campo TITULO é obrigatorio")
 	private String titulo;
 	
-	@Column(nullable = false, length = 50)
+	@Column(length = 50)
+	@NotEmpty(message = "Campo NOME DO AUTOR é obrigatorio")
+	
 	private String nome_autor;
-	@Column(nullable = false)
+	
+	@Column(length = 2000000)
+	@NotEmpty(message = "Campo TEXTO é obrigatorio")
 	private String texto;
 	
 	@ManyToOne
